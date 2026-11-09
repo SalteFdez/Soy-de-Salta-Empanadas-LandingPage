@@ -13,6 +13,8 @@ import {
 } from "../data/site";
 
 const title = "Soy de Salta · Empanadas salteñas, locro y humita";
+const ogImage = new URL("/og-image.png", Astro.site).href;
+const canonical = new URL("/", Astro.site).href;
 const description =
   "Empanadas salteñas, locro, humita en chala y tamales. Hecho en Salta, hecho con mucho amor. Pedí por WhatsApp al 387 534 9832.";
 ---
@@ -25,9 +27,22 @@ const description =
     <meta name="theme-color" content="#ffffff" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Soy de Salta" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={IMAGES.boxes} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo de Soy de Salta, Sabores Regionales" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" as="image" href={IMAGES.hero} fetchpriority="high" />
