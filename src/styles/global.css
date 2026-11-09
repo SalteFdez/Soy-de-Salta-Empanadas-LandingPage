@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Palette sampled from the brand's own photos */
+@theme {
+  --color-copper: #d9772e;      /* top delivery box */
+  --color-copper-deep: #b4581c;
+  --color-yolk: #f3c12e;        /* yellow box */
+  --color-magenta: #e46c8e;     /* pink box */
+  --color-ribbon: #d3123f;      /* red ribbon */
+  --color-kraft: #d9b07c;       /* pine table / cardboard */
+  --color-clay: #c9824f;        /* locro pot */
+  --color-ink: #1d1a18;         /* logo lettering */
+  --color-paper: #ffffff;
+  --color-whatsapp: #25d366;
+
+  --font-hand: "Caveat Brush", "Comic Sans MS", cursive;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  /* `clip` (not `hidden`) so we never create a scroll container that kills position: sticky on iOS */
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ribbon);
+  outline-offset: 3px;
+}

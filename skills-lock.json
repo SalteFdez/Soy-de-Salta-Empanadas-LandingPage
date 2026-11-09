@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "89496d5dd00f4810205f351759594fc2742bf8eea85a2f2b2d1de59f4bd91576"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "5dce49bdb3a5f461ec15283a6c05197698539e974ac622db8e130a9d49848238"
+    },
+    "landing-page-design": {
+      "source": "elayadesign/ai-design-skills",
+      "sourceType": "github",
+      "skillPath": "skills/landing-page-design/SKILL.md",
+      "computedHash": "e0cf363a00650a18797c3cfc086b7e32cdff56b4cb34d72978d7b60aa8ca0172"
+    },
+    "scroll-world": {
+      "source": "oso95/scroll-world",
+      "sourceType": "github",
+      "skillPath": "skills/scroll-world/SKILL.md",
+      "computedHash": "e7ea15d223b6a687840306ab4e3e48ce507df3094c8e78742f6f8b84ae7face0"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "411316b5893571bda59f1517b1fd639682cbbc26f8c804c08a071f2b7b864992"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "ca7b0c0c6e5f2750043f7f0cd72d16ac4e2abc48f9b5500d047a4b77a2506212"
+    }
+  }
+}

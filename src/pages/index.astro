@@ -1,16 +1,92 @@
 ---
+import "../styles/global.css";
+import ScrollExperience from "../components/ScrollExperience.tsx";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import {
+  ADDRESS,
+  IMAGES,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  WHATSAPP_URL,
+} from "../data/site";
+
+const title = "Soy de Salta · Empanadas salteñas, locro y humita";
+const description =
+  "Empanadas salteñas, locro, humita en chala y tamales. Hecho en Salta, hecho con mucho amor. Pedí por WhatsApp al 387 534 9832.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={IMAGES.boxes} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" as="image" href={IMAGES.hero} fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Instrument+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header
+      class="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-start justify-between px-4 pt-[max(.75rem,env(safe-area-inset-top))]"
+    >
+      <a href="/" class="pointer-events-auto block size-16 overflow-hidden rounded-full bg-paper shadow-md md:size-20" aria-label="Soy de Salta, inicio">
+        <img src={IMAGES.logo} alt="" class="size-full scale-125 object-cover" width="64" height="64" />
+      </a>
+      <a
+        href={`tel:${PHONE_TEL}`}
+        class="pointer-events-auto rounded-full bg-paper/95 px-4 py-2 text-sm font-semibold tabular-nums shadow-md"
+      >
+        {PHONE_DISPLAY}
+      </a>
+    </header>
+
+    <main>
+      <ScrollExperience client:load />
+
+      <footer class="bg-ink px-5 pb-32 pt-16 text-paper md:px-[6vw]">
+        <div class="mx-auto grid max-w-5xl gap-10 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <p class="font-hand text-5xl leading-none text-yolk md:text-6xl">Hecho en Salta.<br />Hecho con mucho amor.</p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener"
+              class="mt-8 inline-block bg-ribbon px-6 py-4 font-hand text-3xl leading-none hover:bg-copper-deep"
+            >
+              Hacé tu pedido
+            </a>
+          </div>
+          <address class="space-y-4 not-italic leading-relaxed">
+            <p>
+              <span class="block text-sm text-paper/60">Dónde estamos</span>
+              {ADDRESS}
+            </p>
+            <p>
+              <span class="block text-sm text-paper/60">Teléfono y WhatsApp</span>
+              <a href={`tel:${PHONE_TEL}`} class="underline decoration-copper underline-offset-4 tabular-nums">{PHONE_DISPLAY}</a>
+            </p>
+            <p>
+              <span class="block text-sm text-paper/60">Instagram</span>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener" class="underline decoration-magenta underline-offset-4">{INSTAGRAM_HANDLE}</a>
+            </p>
+          </address>
+        </div>
+      </footer>
+    </main>
+
+    <WhatsAppButton />
+  </body>
 </html>
